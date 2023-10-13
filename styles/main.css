@@ -42,6 +42,7 @@ body {
 /* No código abaixo, está as 4 configuração de forma resumida, em apenas um compenente */
 
     background: var(--background-url) no-repeat top center/cover;
+    height: 100vh;
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
 }
@@ -74,7 +75,7 @@ body {
     margin: 4px auto;
 }
 
-button {
+#botao-mode button {
     width: 35px;
     height: 35px;
     border-radius:50% ;
@@ -88,6 +89,7 @@ button {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    animation: slider-out 4s linear;
 }
 
 #botao-mode span {
@@ -99,12 +101,13 @@ button {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 9999px;
+
 }
 
 
 .light #botao-mode button {
-    right: 0;
-    left: initial;
+    animation: slide-in .4s forwards;
+
 }
 
 
@@ -182,6 +185,27 @@ footer {
 
 
 
+/* Keyframes */
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+
+};
+
+@keyframes slider-out {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+
+};
 
 
 
